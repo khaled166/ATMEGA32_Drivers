@@ -117,7 +117,7 @@ uint8 USART_RX_STRING(void);
 #define Recevier_status           RXEN_ENABLE
 #define TX_9bit_status            TXB8_DISABLE
 #define RX_9bit_status            RXB8_DISABLE
-#define RX_interrupt_status       RXCIE_DISABLE
+#define RX_interrupt_status       RXCIE_ENABLE
 #define TX_interrupt_status       TXCIE_DISABLE
 #define FE_status                 FE_DISABLE
 #define DOR_STATUS                DOR_DISABLE

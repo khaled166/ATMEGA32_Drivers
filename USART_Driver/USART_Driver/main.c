@@ -6,7 +6,9 @@
  */ 
 
 #include "UART.h"
-#include<util/delay.h>
+#include <avr/interrupt.h>
+
+ uint8 Data_rec=0;
 
 int main(void)
 {
@@ -14,17 +16,16 @@ int main(void)
 	LCD_Init();
 	LCD_WriteChar();
 	 //USART_TX_CHAR('a');
-	 USART_TX_STRING("hi its me");
+	 USART_TX_STRING("Hello");
 	 
-    uint8 Data_rec=0;
-	
-
-
 
     while (1) 
     {
-			Data_rec=USART_RX_STRING();
-			LCD_WriteString(Data_rec);
-		
 	}
+}
+
+ISR(USART_RXC_vect){
+	
+	Data_rec=USART_RX_STRING();
+	LCD_WriteString(Data_rec);
 }

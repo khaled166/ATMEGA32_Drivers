@@ -272,10 +272,10 @@ uint8 USART_RX_CHAR(void){
 //Receive Data complete String.
 uint8 USART_RX_STRING(void){
 	
-	  static uint8 DATA[16];
+	  static uint8 DATA[15];
 	  uint8 i=0;
 	  uint8 val;
-	  for(i=0;i<16;i++){
+	  for(i=0;i<15;i++){
 		  val=USART_RX_CHAR();
 		  if(val=='\n')
 		   break;
